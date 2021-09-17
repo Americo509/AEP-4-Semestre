@@ -1,0 +1,49 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <locale.h>
+
+typedef struct{
+	char nome[50];
+	char rua[500];
+	int numero; 
+	char cpf[11];	
+}TIPO_Pessoa;
+
+typedef struct{
+	char raca[50];
+	int quantidade; 
+	int quantidade_abate;		
+}TIPO_Pecuaria;
+
+int main(){
+	
+	setlocale(LC_ALL, "Portuguese");
+	
+	TIPO_Pessoa p1;
+	TIPO_Pecuaria b1;
+	
+	printf("Digite seu Nome: ");
+	fgets(p1.nome, 50, stdin);
+	fflush(stdin);
+	printf("Digite o nome da rua: ");
+	fgets(p1.rua, 500, stdin);
+	fflush(stdin);
+	printf("Digite seu CPF: ");
+	scanf("%s", &p1.cpf);
+	printf("Digite a raca do boi: ");
+	scanf("%s", &b1.raca);
+	printf("Digite a quantidade de boi: ");
+	scanf("%d", &b1.quantidade);
+	printf("Digite a quantidade para abate: ");
+	scanf("%d", &b1.quantidade_abate);
+
+	printf("\n\nNome do Fazendeiro: %s\n", p1.nome);
+	printf("Localizacao: %s\n", p1.rua);
+	printf("CPF: %s\n\n", p1.cpf);
+	printf("Quantidade de boi na Fazenda: %d\n\n", b1.quantidade);
+	printf("A raça dos bois: %s\n\n", b1.raca);
+	printf("Quantidade para abate: %d\n\n", b1.quantidade_abate);	
+	
+	return 0;
+}
